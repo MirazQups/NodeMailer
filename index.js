@@ -65,7 +65,7 @@ console.log(date)
    
   var mailOptions = {
      from: 'tnodemail3@gmail.com',
-     to: 'miraz.qups@gmail.com, yeasin.qups@gmail.com, har.qups@gmail.com, asif.qups@gmail.com',
+     to: 'miraz.qups@gmail.com, yeasin.qups@gmail.com, har.qups@gmail.com',
      subject: 'Sending Email using Node.js',
      html: `<h1>Welcome</h1><p>That ${date} was easy!</p>` ,
      attachments: [{
