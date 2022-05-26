@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "nodemailer": "^6.7.5"
+    "nodemailer": "^6.7.5",
+    "pdfkit": "^0.13.0"
   }
 }

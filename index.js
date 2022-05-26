@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-
 // async..await is not allowed in global scope, must use a wrapper
 // async function main() {
 //   // Generate test SMTP service account from ethereal.email
@@ -49,37 +48,37 @@ const nodemailer = require("nodemailer");
 // main().catch(console.error);
 
 var mail = nodemailer.createTransport({
-    service: 'gmail',
-    host: "smtp.miraz.email",
-    port: 465,
-    secure: false,
-    auth: {
-      user: 'tnodemail3@gmail.com',
-      pass: 'nodemailer07@'
-    }
-  });
+  service: 'gmail',
+  host: "smtp.miraz.email",
+  port: 465,
+  secure: false,
+  auth: {
+    user: 'tnodemail3@gmail.com',
+    pass: 'nodemailer07@'
+  }
+});
 
 var timestamp = Date.now()
 var date = new Date(timestamp);
 console.log(date)
-   
-  var mailOptions = {
-     from: 'tnodemail3@gmail.com',
-     to: 'miraz.qups@gmail.com, yeasin.qups@gmail.com, har.qups@gmail.com',
-     subject: 'Sending Email using Node.js',
-     html: `<h1>Welcome</h1><p>That ${date} was easy!</p>` ,
-     attachments: [{
-         filename: date +'text1.html',
-         content: 'hello world!',
-         path: 'miraz.html'
-     }]
+
+var mailOptions = {
+  from: 'tnodemail3@gmail.com',
+  to: 'miraz.qups@gmail.com, yeasin.qups@gmail.com, har.qups@gmail.com, rm.qups@gmail.com',
+  subject: 'Sending Email using Node.js',
+  html: `<h1>Welcome</h1><p>That ${date} was easy!</p>`,
+  attachments: [{
+    filename: date + 'text1.pdf',
+    content: 'hello world!',
+    path: 'allure.pdf'
+  }]
+}
+
+mail.sendMail(mailOptions, function (error, info) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
   }
-   
-  mail.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-  });
+});
 
